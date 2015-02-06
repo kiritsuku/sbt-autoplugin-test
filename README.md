@@ -16,3 +16,14 @@ Cloning the repo and executing sbt in its root results in the following error me
 [error] (compile:compile) Compilation failed
 Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? q
 ```
+
+Uncommenting `build.sbt` and commenting `Build.scala` instead results also in an error:
+
+```
+[info] Loading project definition from /home/antoras/dev/scala/sbt-autoplugin-test/project
+/home/antoras/dev/scala/sbt-autoplugin-test/build.sbt:1: error: not found: value SbtOsgi
+lazy val fooProject = Project("foo-project", file(".")).enablePlugins(SbtOsgi)
+                                                                      ^
+sbt.compiler.EvalException: Type error in expression
+	at sbt.compiler.Eval.checkError(Eval.scala:384)
+```
